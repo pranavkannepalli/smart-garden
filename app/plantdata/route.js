@@ -49,6 +49,7 @@ export async function POST(request) {
         return NextResponse.json(
             {
                 "error": err,
+                "request": request,
             }, 
             {
                 status: 404,
