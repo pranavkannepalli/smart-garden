@@ -1,6 +1,6 @@
 import { NextRequest, NextResponse } from "next/server";
 import db from './_firebase.js';
-import { collection, getDocs, updateDoc } from "firebase/firestore";
+import { collection, getDocs, updateDoc, doc } from "firebase/firestore";
 
 export async function GET(request) {
     try {
@@ -49,7 +49,7 @@ export async function POST(request) {
         return NextResponse.json(
             {
                 "error": err,
-                "request": request,
+                "request": request.body,
             }, 
             {
                 status: 404,
