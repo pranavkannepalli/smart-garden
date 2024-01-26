@@ -34,7 +34,7 @@ export async function POST(request) {
     try {
         const newData = await request.json();
         const plant1Ref = doc(db, "plantdata", "1");
-        updateDoc(plant1Ref, newData);
+        await updateDoc(plant1Ref, newData);
 
         return NextResponse.json(
             {
