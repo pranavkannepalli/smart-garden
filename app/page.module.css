@@ -21,16 +21,27 @@
   border-radius: 50%;
   display: grid;
   place-items: center;
+  transition: background-image 200ms ease-in-out;
 }
 
 .card {
   border-radius: var(--border-radius);
   background-color: var(--card-rgb);
   border: 1px solid rgba(var(--card-border-rgb), 0);
-  transition: all ease-in-out 200ms;
+  transition: all 200ms ease-in-out;
+  padding: 2rem;
 }
 
+
+
 .card:hover {
-  background-color: var(--card-rgb);
-  border: white;
+  background-color: #222222;
+}
+
+.card:hover > .gauge {
+  background-image:
+    radial-gradient(closest-side, #222222 0%, #222222 calc(100% - var(--thickness)), transparent calc(100% - var(--thickness))),
+    conic-gradient(from -90deg, limegreen 0deg var(--deg), transparent var(--deg) 180deg),
+    conic-gradient(from -90deg, lightgray 0deg 180deg, transparent 180deg);
+  transition: all 200ms ease-in-out;
 }

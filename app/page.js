@@ -29,7 +29,7 @@ export default async function Page() {
         <div className={styles.main}>
           {Object.keys(headers).map((val, index) => (
             <div className={styles.card} key={index}>
-              {val + ": "}
+              {val.charAt(0).toUpperCase() + val.slice(1) + ": "}
               <div className={styles.gauge} style={{"--percent": data[0][val]/headers[val] * 100 ?? 0}}>
                 {data[0][val] + "/" + headers[val] ?? 0} 
               </div>
