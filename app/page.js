@@ -1,7 +1,7 @@
 import styles from './page.module.css';
 
 async function getData() {
-  const res = await fetch('https://smart-garden-rho.vercel.app/plantdata', { next: { revalidate: 60 } })
+  const res = await fetch('https://smart-garden-rho.vercel.app/plantdata')
  
   if (!res.ok) {
     throw new Error('Failed to fetch data')
