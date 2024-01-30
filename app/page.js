@@ -1,13 +1,13 @@
 import styles from './page.module.css';
 
-async function getData() {
-  const res = await fetch('https://smart-garden-rho.vercel.app/plantdata')
+export const getData = async () => {
+  const res = await fetch('https://smart-garden-rho.vercel.app/plantdata', {method: "GET", cache: 'no-store'})
  
   if (!res.ok) {
     throw new Error('Failed to fetch data')
   }
  
-  return res.json()
+  return await res.json()
 }
  
 export default async function Page() {
@@ -24,7 +24,6 @@ export default async function Page() {
  
   return (
     <main>
-      <body>
         <h1>Plant {currplant}</h1>
         <div className={styles.main}>
           {Object.keys(headers).map((val, index) => (
@@ -36,7 +35,6 @@ export default async function Page() {
             </div>
           ))}
         </div>
-      </body>
     </main>
   )
 }
