@@ -59,4 +59,4 @@ export async function POST(request) {
 }
 
 
-export const revalidate = 5;
+export const revalidate = 300;
